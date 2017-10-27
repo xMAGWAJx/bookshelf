@@ -14,6 +14,14 @@ values (2, 'Simple User', 'user@domain.com', 'user');
 insert into user_role(user_id, role_id) values (2,2);
 
 
+insert into role (id, role_name) values (3, 'manager');
+
+insert into user (id, full_name, email, password)
+values (3, 'Library manager', 'manager@domain.com', 'manager');
+
+insert into user_role(user_id, role_id) values (3,3);
+
+
 insert into book (author, description, isbn, title, year) values (
 'Akinyemi Ruelas Rojo', 
 'Suppose that there exists the intuitive unification of neural networks and Moore''s Law such that we can easily construct Bayesian technology. Continuing with this rationale, we consider an algorithm consisting of n systems. We estimate that optimal configurations can provide the understanding of hash tables without needing to study context-free grammar. We scripted a trace, over the course of several weeks, disproving that our framework holds for most cases. This is a theoretical property of our method. Continuing with this rationale, we estimate that the much-touted ambimorphic algorithm for the deployment of vacuum tubes by Gupta and Zhao is optimal. we use our previously constructed results as a basis for all of these assumptions.', 

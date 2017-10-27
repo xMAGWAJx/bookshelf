@@ -42,6 +42,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/login").permitAll()
                 .antMatchers("/register").permitAll()
                 .antMatchers("/h2-console").hasAuthority("admin")
+                .antMatchers("/manage/**").hasAnyAuthority("admin", "manager")
                 .anyRequest().authenticated()
                 .and().csrf().disable().formLogin()
                         .loginPage("/login")

@@ -1,7 +1,7 @@
 package lv.tele2ssc.bookshelf.services;
 
-import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import lv.tele2ssc.bookshelf.model.Role;
 import lv.tele2ssc.bookshelf.repositories.RoleRepository;
@@ -46,5 +46,9 @@ public class UserService {
 
         user.setRoles(roleSet);
         userRepository.save(user);
+    }
+    
+    public List<User> findAll() {
+        return userRepository.findAll();
     }
 }

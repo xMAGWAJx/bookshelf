@@ -19,6 +19,37 @@
                 </a>
             </div>
 
+
+
+            <div th:fragment="give-list(books, user" class="w3-row-padding w3-margin-top w3-marging-bottom">
+                <div th:each="b : ${books}" class="w3-col s12 m4 13 w3-margin-top">
+                    <form th:action="@{manage/give}" class="w3-card-4" method="post">
+                        <input type="hidden" name="userId" th:value="${userId}"/>
+                        <input type="hidden" name="bookId" th:value="%{b.id}"/>
+                        <img scr="http://via.placeholder.com/300x300" style="width: 100%"/>
+                        <div class="w3-container">
+                            <h3 th:text="${b.title}">title</h3>
+                            <p th:text="${b.author}">author</p>
+                        </div>
+                        <button class="w3-button w3_blue w3-block">Give</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div th:fragment="take-list(books, user" class="w3-row-padding w3-margin-top w3-marging-bottom">
+                <div th:each="b : ${books}" class="w3-col s12 m4 13 w3-margin-top">
+                    <form th:action="@{manage/take}" class="w3-card-4" method="get">
+                        <input type="hidden" name="userId" th:value="${userId}"/>
+                        <input type="hidden" name="bookId" th:value="%{b.id}"/>
+                        <img scr="http://via.placeholder.com/300x300" style="width: 100%"/>
+                        <div class="w3-container">
+                            <h3 th:text="${b.title}">title</h3>
+                            <p th:text="${b.author}">author</p>
+                        </div>
+                        <button class="w3-button w3_blue w3-block">Give</button>
+                    </form>
+                </div>
+            </div>
         </div>
 
     </body>

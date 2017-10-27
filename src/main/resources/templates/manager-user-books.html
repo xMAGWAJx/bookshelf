@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Bookshelf</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+        <script src="https://www.w3schools.com/lib/w3.js"></script>
+    </head>
+    <body>
+        <div th:replace="fragments/menu :: main"></div>
+
+        <div class="w3-container w3-margin w3-padding">
+            <div class="w3-row w3-margin">
+                <button class="w3-button w3-left-align w3-col s12 w3-green" onclick="toggleGroup('availableBooks')">Available books</button>
+            </div>
+            <div id="availableBooks" class="w3-row-padding w3-animate-left" th:include="fragments/books :: list(${availableBooks})"></div>
+
+
+            <div class="w3-row w3-margin">
+                <button class="w3-button w3-left-align w3-col s12 w3-green" onclick="toggleGroup('ownedBooks')">Owned books</button>
+            </div>
+            <div id="ownedBooks" class="w3-hide w3-row-padding w3-animate-left" th:include="fragments/books :: list(${ownedBooks})"></div>
+
+
+            <div class="w3-row w3-margin">
+                <button class="w3-button w3-left-align w3-col s12 w3-green" onclick="toggleGroup('queuedBooks')">In queue</button>
+            </div>
+            <div id="queuedBooks" class="w3-hide w3-row-padding w3-animate-left" th:include="fragments/books :: list(${queuedBooks})"></div>
+        </div>
+        <script>
+            function toggleGroup(id) {
+                w3.toggleClass('#' + id, 'w3-hide');
+            }
+        </script>
+
+
+    </body>
+</html>
