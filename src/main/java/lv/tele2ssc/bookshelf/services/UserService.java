@@ -8,6 +8,7 @@ import lv.tele2ssc.bookshelf.repositories.RoleRepository;
 import lv.tele2ssc.bookshelf.model.User;
 import lv.tele2ssc.bookshelf.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.annotation.Id;
 import org.springframework.stereotype.Service;
 
 
@@ -32,6 +33,10 @@ public class UserService {
         return roleRepository.findByName(name);
     }
     
+    public Id findByUserId(String id) {
+        return (Id) userRepository.findByUserId(id);
+    }
+        
     public void save(User user) {
         Role usersRole = findRole("user");
         Set<Role> roleSet = new HashSet<>();
@@ -50,5 +55,9 @@ public class UserService {
     
     public List<User> findAll() {
         return userRepository.findAll();
+    }
+
+    public User findByUserId() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

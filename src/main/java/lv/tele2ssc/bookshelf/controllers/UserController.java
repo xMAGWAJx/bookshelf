@@ -2,7 +2,6 @@ package lv.tele2ssc.bookshelf.controllers;
 
 import java.util.ArrayList;
 import lv.tele2ssc.bookshelf.services.UserService;
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import javax.validation.Valid;
